@@ -52,7 +52,8 @@ func main() {
         CreatedOn: time.Now().Format("Mon 2.1.2006 at 15:4"),
     }
 
-    for _, filename := range os.Args[1:] {
+    filenames := flag.Args()
+    for _, filename := range filenames {
         if ! strings.HasSuffix(strings.ToLower(filename), ".go") {
             filename = filename + ".go"
         }
