@@ -8,8 +8,10 @@ Example usage:
 
 ```
 stjepan@carthaginian:~$ go-prestamp --author me --project sth    first second.go third
+
 stjepan@carthaginian:~$ ls
 first.go    second.go   third.go
+
 stjepan@carthaginian:~$ cat first.go
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 *
