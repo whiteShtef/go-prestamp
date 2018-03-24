@@ -22,34 +22,46 @@ var template_string =
 *
 *
 *           File created on {{.CreatedOn}}
-* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * /
 `
 
 
 // Context that gets passed to the template
 type Context struct {
     ProjectName string
-    AuthorName string
+    AuthorName  string
     ProjectYear int
-    WittyText string
-    CreatedOn string
+    WittyText   string
+    CreatedOn   string
 }
 
 
 func main() {
-    projectName := flag.String("project","Super Secret Project", "Name of the project you are working on.")
-    authorName := flag.String("author","Johnny English", "Name of the person who created the file.")
-    projectYear  := flag.Int("year", time.Now().Year(), "Calendar yearear relevant to the project.")
-    wittyText   := flag.String("witty-text", "Simple, but not simpler. - Albert Einstein", "Witty text :)")
+    projectName := flag.String(
+        "project",
+        "Super Secret Project",
+        "Name of the project you are working on.")
+    authorName  := flag.String(
+        "author",
+        "Johnny English",
+        "Name of the person who created the file.")
+    projectYear := flag.Int(
+        "year",
+        time.Now().Year(),
+        "Calendar yearear relevant to the project.")
+    wittyText   := flag.String(
+        "witty-text",
+        "Simple, but not simpler. - Albert Einstein",
+        "Witty text :)")
 
     flag.Parse()
 
     con := &Context{
-        ProjectName:*projectName,
-        AuthorName:*authorName,
-        ProjectYear:*projectYear,
-        WittyText:*wittyText,
-        CreatedOn: time.Now().Format("Mon 2.1.2006 at 15:4"),
+        ProjectName: *projectName,
+        AuthorName:  *authorName,
+        ProjectYear: *projectYear,
+        WittyText:   *wittyText,
+        CreatedOn:   time.Now().Format("Mon 2.1.2006 at 15:4"),
     }
 
     filenames := flag.Args()

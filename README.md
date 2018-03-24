@@ -2,11 +2,12 @@
 
 ---
 
-A simple program that generates .go files with custom "header comments".
+A simple CLI that generates `.go` files with custom *"header comments"*.
 
-Example usage:
 
-```
+**Example usage:**
+
+```bash
 stjepan@carthaginian:~$ go-prestamp --author me --project sth    first second.go third
 
 stjepan@carthaginian:~$ ls
